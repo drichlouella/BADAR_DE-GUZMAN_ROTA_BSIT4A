@@ -1,4 +1,4 @@
-Laravel Starter Kit: Academic Project Description
+Laravel Starter Kit: Final Project Description
 This Laravel Starter Kit functions as a fundamental boilerplate for developing web applications. It's a custom-built solution that integrates a comprehensive authentication system and a secure admin panel, both of which feature full CRUD (Create, Read, Update, Delete) capabilities.
 
 The system employs a role-based access control model with two distinct user types: Admin and Supplier. The Admin possesses privileges, allowing for full user management, including the ability to view, edit, delete, and Change passwords for all accounts. The Supplier role is specialized for content management, specifically for the Product model, and can perform all CRUD operations on their own product data.
