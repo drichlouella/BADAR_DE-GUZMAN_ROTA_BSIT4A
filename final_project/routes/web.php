@@ -9,9 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::middleware(['auth', 'verified', 'role:admin'])->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/admin/users', [AdminController::class, 'index'])->name('admin.users.index');
     Route::get('/admin/users/{user}/edit', [AdminController::class, 'edit'])->name('admin.users.edit');
+    Route::get('/admin/users/{user}', [AdminController::class, 'show'])->name('admin.users.show');
     Route::put('/admin/users/{user}', [AdminController::class, 'update'])->name('admin.users.update');
     Route::delete('/admin/users/{user}', [AdminController::class, 'destroy'])->name('admin.users.destroy');
     Route::put('/admin/users/{user}/change-password', [AdminController::class, 'changePassword'])->name('admin.users.change-password');

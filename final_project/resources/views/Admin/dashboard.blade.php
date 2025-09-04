@@ -147,10 +147,10 @@
               <tr>
                 <td>{{ $user->name }}</td>
                 <td>{{ $user->email }}</td>
-                <td>{{ $user->is_admin ? 'Admin' : 'Supplier' }}</td>
+                <td>{{ $user->role === 'admin' ? 'Admin' : 'Supplier' }}</td>
                 <td class="text-end">
                   <div class="btn-group" role="group">
-                    <a href="#" class="btn btn-view">View</a>
+                    <a href="{{ route('admin.users.show', $user) }}" class="btn btn-view">View</a>
                     <a href="{{ route('admin.users.edit', $user) }}" class="btn btn-edit">Edit</a>
                     <form action="{{ route('admin.users.destroy', $user) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this user?');" style="display:inline;">
                       @csrf

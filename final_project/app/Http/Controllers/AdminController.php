@@ -27,6 +27,11 @@ class AdminController extends Controller
         return view('admin.users.index', compact('users'));
     }
 
+    public function show(User $user)
+    {
+        return view('admin.users.show', compact('user'));
+    }
+
     public function edit(User $user)
     {
         return view('admin.users.edit', compact('user'));
@@ -46,13 +51,13 @@ class AdminController extends Controller
             'role' => $request->role,
         ]);
 
-        return redirect()->route('admin.users.index')->with('success', 'User updated successfully!');
+        return redirect()->route('dashboard')->with('success', 'User updated successfully!');
     }
 
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('admin.users.index')->with('success', 'User deleted successfully!');
+        return redirect()->route('dashboard')->with('success', 'User deleted successfully!');
     }
 
     public function changePassword(Request $request, User $user)
